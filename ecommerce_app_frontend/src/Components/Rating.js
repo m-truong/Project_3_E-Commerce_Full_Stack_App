@@ -10,7 +10,7 @@ function Rating({ rating, numReviews }) {
                         : rating >= 0.5
                             ? "fa fa-star-half-o"
                             : "fa fa-start-o"}>
-                </i>
+                </i> 
             </span>
             <span>
                 <i className={
