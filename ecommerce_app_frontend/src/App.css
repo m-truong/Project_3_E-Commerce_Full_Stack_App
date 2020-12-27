@@ -111,7 +111,9 @@ img.medium {
   color: #f0c040;
   margin: 01rem;
 }
-
+.rating span:last-child {
+  color: #404040;
+} 
 /* Input */
 input {
   padding: 0.5rem;
