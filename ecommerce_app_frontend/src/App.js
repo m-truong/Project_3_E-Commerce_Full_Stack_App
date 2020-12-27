@@ -1,14 +1,22 @@
+// 
 import React from "react";
-import Product from "./Components/Product";
-import data from "./data";
+// External Components and Screens Imported
+
+import HomeScreen from "./Screens/HomeScreen";
+import ProductScreen from "./Screens/ProductScreen";
+// 
+import { Switch, Route, Link, Redirect, NavLink } from "react-router-dom";
+// 
+
+// 
 import './App.css';
 
-function App() { 
+function App() {
   return (
     <div className="grid-container">
       <header>
         <div className="row">
-          <a className="brand" href="/">Topspin</a>
+          <a className="brand" href="/">E-Commerce</a>
         </div>
         <div>
           <a href="/cart">Cart</a>
@@ -16,18 +24,11 @@ function App() {
         </div>
       </header>
       <main>
-        <div className="row center">
-          {
-            data.products.map((product) => {
-              return (
-                <Product key={product._id} product={product}/> 
-              )
-            })
-          }
-        </div>
+        <Route path="/product/:id" render={(routerProps) => { return <ProductScreen routerProps={routerProps} /> }} />
+        <Route exact path="/" component={HomeScreen} />
       </main>
       <footer className="row center">
-        E-Commerce Store App 
+        E-Commerce Store App
       </footer>
     </div>
   );

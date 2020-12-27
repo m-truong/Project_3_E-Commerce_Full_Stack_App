@@ -6,6 +6,7 @@ const data = {
             category: "Tennis Racquet",
             image: "https://img.tennis-warehouse.com/watermark/rs.php?path=BPD1H-1.jpg",
             price: 219,
+            countInStock: 10,
             brand: 'Babolat',
             rating: 4.5,
             numReviews: 10,
@@ -17,6 +18,7 @@ const data = {
             category: "Tennis Racquet",
             image: "https://img.tennis-warehouse.com/watermark/rs.php?path=WB98R-1.jpg",
             price: 219,
+            countInStock: 20,
             brand: 'Wilson',
             rating: 4.5,
             numReviews: 10,
@@ -28,6 +30,7 @@ const data = {
             category: "Tennis Racquet",
             image: "https://img.tennis-warehouse.com/watermark/rs.php?path=VVCEL9-1.jpg",
             price: 209,
+            countInStock: 0,
             brand: 'Volkl',
             rating: 4.5,
             numReviews: 10,
@@ -39,6 +42,7 @@ const data = {
             category: "Tennis Racquet",
             image: "https://img.tennis-warehouse.com/watermark/rs.php?path=HRRP-1.jpg",
             price: 239,
+            countInStock: 15,
             brand: 'Head',
             rating: 4.5,
             numReviews: 10,
@@ -50,11 +54,12 @@ const data = {
             category: "Tennis Racquet",
             image: "https://img.tennis-warehouse.com/watermark/rs.php?path=PTXP7G-1.jpg",
             price: 199,
+            countInStock: 12,
             brand: 'Prince',
             rating: 4.5,
             numReviews: 10,
             description: "High quality tennis racquet",
         }
-    ]
+    ] 
 }
 export default data;

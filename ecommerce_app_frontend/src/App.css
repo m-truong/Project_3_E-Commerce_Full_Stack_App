@@ -8,6 +8,8 @@ body {
   height: 100vh;
   font-size: 1.6rem;
   font-family: Helvetica, Arial, sans-serif;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
 }
 
 /* Layout */
@@ -53,6 +55,15 @@ a {
 a:hover {
   color: #ff8000;
 }
+ul {
+  padding: 0;
+  margin: 0;
+  /* gets rid of bullet points */
+  list-style-type: none;
+}
+li {
+  margin-top: 1rem; 
+}
 
 /* Header */
 header a {
@@ -74,6 +85,23 @@ a.brand {
 .row.center {
   justify-content: center;
 }
+.row.top {
+  /* pushes product "divs" to top of product-show-page  */
+  align-items: flex-start;
+}
+
+.col-1 {
+  /* flex: flex-grow (occupy 1 of 4 cols */
+  /* flex: flex-shrink (shrink by 1)  */
+  /* flex: flex-basis (default-width of col b4 distributing remaining space across els)  */
+  flex: 1 1 25rem;
+}
+.col-2 {
+  /* flex: flex-grow (occupy 1 of 4 cols */
+  /* flex: flex-shrink (shrink by 1)  */
+  /* flex: flex-basis (default-width of col b4 distributing remaining space across els)  */
+  flex: 2 1 50rem;
+}
 
 /* Image */
 img {
@@ -81,6 +109,11 @@ img {
 }
 img.medium {
   max-width: 29rem;
+  width: 100%;
+}
+
+img.large {
+  /* 100% of parent container */
   width: 100%;
 }
 
@@ -111,25 +144,50 @@ img.medium {
   color: #f0c040;
   margin: 01rem;
 }
+/* targets last span-el number of reviews */
 .rating span:last-child {
   color: #404040;
-} 
+}
 /* Input */
 input {
   padding: 0.5rem;
   border: 0px;
   box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2), 0 0.2em 0.2em rgba(0, 0, 0, 0.2);
 }
-/* Button  */
+/* Custom Button Styling */
 button {
-  padding: 0.5rem 2rem;
-  margin: 0 1rem;
-  text-transform: uppercase;
-  background-color: rgb(241, 129, 0);
-  border: 0;
   color: white;
+  cursor: pointer;
+  background-color: rgb(241, 129, 0);
+  border: 0.1rem #a4a4a4 solid;
   border-radius: 4px;
   box-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2), 0 0.2em 0.2em rgba(0, 0, 0, 0.2);
+  font-family: Helvetica, Arial, sans-serif;
+  --webkit-font-smoothing: antialiased;
+  --moz-osx-font-smoothing: grayscale;
+  font-size: 2rem;
   font-weight: bold;
   letter-spacing: 1px;
+  margin: 0 1rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+button:hover{
+  border: 0.1rem #404040 solid; 
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+button.primary {
+  /* background-color: #f0c040; */
+}
+button.block {
+  /* width: 100%; */
+}
+
+/* Alert */
+.success {
+  color: #20a020;
+}
+.error {
+  color: #a02020;
 }
