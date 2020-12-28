@@ -1,10 +1,11 @@
-// 
+// React
 import React from 'react'
-// 
+// Product Component
 import Product from "../Components/Product";
+// Static Data
 import data from "../data";
 
-function HomeScreen() {
+function HomeScreen(props) {
     return (
         <div className="row center">
             {

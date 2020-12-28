@@ -1,3 +1,4 @@
+// Static Array of Product Objects
 const data = {
     products: [
         {

@@ -1,20 +1,24 @@
+// React
 import React from 'react'
-import { Link } from 'react-router-dom'
+// Rating Component
 import Rating from '../Components/Rating'
+// React-Router
+import { Link } from 'react-router-dom'
+// static array of data
 import data from '../data'
 
 function ProductScreen({ routerProps }) {
     // searches array for *condition*
-    const currProduct = data.products.find((currProduct) => currProduct._id === routerProps.match.params.id)
+    const productToDisplay = data.products.find((currProduct) => currProduct._id === routerProps.match.params.id)
 
-    if (!currProduct) {
+    if (!productToDisplay) {
         return (
             <div>
-                Product Not Found!
+                Product Not Currently Available ... 
             </div>
         )
     }
-    
+
     return (
         <div>
             <Link to="/"> Back To Result</Link>
@@ -22,21 +26,21 @@ function ProductScreen({ routerProps }) {
             <div className="row top">
                 {/* product image */}
                 <div className="col-2">
-                    <img className="large" src={currProduct.image} alt={currProduct.name} />
+                    <img className="large" src={productToDisplay.image} alt={productToDisplay.name} />
                 </div>
                 {/* description */}
                 <div className="col-1">
                     <ul>
                         <li>
-                            <h1>{currProduct.name}</h1>
+                            <h1>{productToDisplay.name}</h1>
                         </li>
                         <li>
                             <Rating
-                                rating={currProduct.rating}
-                                numReviews={currProduct.numReviews} />
+                                rating={productToDisplay.rating}
+                                numReviews={productToDisplay.numReviews} />
                         </li>
-                        <li>Price: ${currProduct.price}</li>
-                        <li>Description: <p>{currProduct.description}</p>
+                        <li>Price: ${productToDisplay.price}</li>
+                        <li>Description: <p>{productToDisplay.description}</p>
                         </li>
                     </ul>
                 </div>
@@ -50,7 +54,7 @@ function ProductScreen({ routerProps }) {
                                         Price
                                     </div>
                                     <div className="price">
-                                        ${currProduct.price}
+                                        ${productToDisplay.price}
                                     </div>
                                 </div>
                             </li>
@@ -60,7 +64,7 @@ function ProductScreen({ routerProps }) {
                                         Status
                                     </div>
                                     <div>
-                                        {currProduct.countInStock > 0
+                                        {productToDisplay.countInStock > 0
                                             ? (<span className="success">In Stock</span>)
                                             : (<span className="error">Unavailable</span>)}
                                     </div>

@@ -3,12 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// Browser Router
 import { BrowserRouter as Router} from "react-router-dom";
-
+// rootElement DOM-el
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <React.StrictMode>
+    {/* Router Wraps App Component */}
     <Router>
       <App />
     </Router>

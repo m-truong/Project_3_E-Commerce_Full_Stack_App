@@ -3,6 +3,7 @@ import React from 'react'
 function Rating({ rating, numReviews }) {
     return (
         <div className="rating">
+            {/* Favicon Stars */}
             <span>
                 <i className={
                     rating >= 1
@@ -48,6 +49,7 @@ function Rating({ rating, numReviews }) {
                             : "fa fa-start-o"}>
                 </i>
             </span>
+            {/* Number of Reviews */}
             <span>
                 {`${numReviews} reviews`}
             </span>
