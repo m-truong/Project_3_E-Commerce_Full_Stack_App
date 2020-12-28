@@ -15,11 +15,11 @@ function App() {
       <header>
         <div className="row">
           {/* Note: actually an <a> tag */}
-          <Link className="brand" href="/">Best Deals!</Link>
+          <Link className="brand" to="/">Best Deals!</Link>
         </div>
         <div>
-          <Link href="/cart">Cart</Link>
-          <Link href="/signin">Sign In</Link>
+          <Link to="/cart">Cart</Link>
+          <Link to="/signin">Sign In</Link>
         </div>
         {/* End of Nav */}
       </header>
@@ -32,7 +32,7 @@ function App() {
         </Switch>
       </main>
       <footer className="row center">
-        E-Commerce Store App
+        Best Deals! Store App
       </footer>
     </div>
   );

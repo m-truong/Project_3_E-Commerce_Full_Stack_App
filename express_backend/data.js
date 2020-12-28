@@ -1,0 +1,66 @@
+// Static Array of Product Objects
+const data = {
+    products: [
+        {
+            _id: '1',
+            name: 'Babolat Pure Drive 2018',
+            category: "Tennis Racquet",
+            image: "https://img.tennis-warehouse.com/watermark/rs.php?path=BPD1H-1.jpg",
+            price: 219,
+            countInStock: 10,
+            brand: 'Babolat',
+            rating: 4.5,
+            numReviews: 10,
+            description: "High quality tennis racquet",
+        },
+        {
+            _id: '2',
+            name: 'Wilson Blade 98 16x19 v7',
+            category: "Tennis Racquet",
+            image: "https://img.tennis-warehouse.com/watermark/rs.php?path=WB98R-1.jpg",
+            price: 219,
+            countInStock: 20,
+            brand: 'Wilson',
+            rating: 4.5,
+            numReviews: 10,
+            description: "High quality tennis racquet",
+        },
+        {
+            _id: '3',
+            name: 'Volkl V-Cell 9',
+            category: "Tennis Racquet",
+            image: "https://img.tennis-warehouse.com/watermark/rs.php?path=VVCEL9-1.jpg",
+            price: 209,
+            countInStock: 0,
+            brand: 'Volkl',
+            rating: 4.5,
+            numReviews: 10,
+            description: "High quality tennis racquet",
+        },
+        {
+            _id: '4',
+            name: 'Head Radical Pro 2021',
+            category: "Tennis Racquet",
+            image: "https://img.tennis-warehouse.com/watermark/rs.php?path=HRRP-1.jpg",
+            price: 239,
+            countInStock: 15,
+            brand: 'Head',
+            rating: 4.5,
+            numReviews: 10,
+            description: "High quality tennis racquet",
+        },
+        {
+            _id: '5',
+            name: 'Prince Phantom 107G',
+            category: "Tennis Racquet",
+            image: "https://img.tennis-warehouse.com/watermark/rs.php?path=PTXP7G-1.jpg",
+            price: 199,
+            countInStock: 12,
+            brand: 'Prince',
+            rating: 4.5,
+            numReviews: 10,
+            description: "High quality tennis racquet",
+        }
+    ] 
+}
+export default data;

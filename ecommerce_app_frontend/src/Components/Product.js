@@ -1,6 +1,6 @@
 // React
 import React from 'react'
-// Rating Component
+// Rating Component 
 import Rating from './Rating'
 
 export default function Product({ product }) {

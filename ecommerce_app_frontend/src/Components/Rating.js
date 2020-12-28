@@ -1,7 +1,7 @@
 import React from 'react'
-
+ 
 function Rating({ rating, numReviews }) {
-    return (
+    return ( 
         <div className="rating">
             {/* Favicon Stars */}
             <span>
