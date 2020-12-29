@@ -1,8 +1,8 @@
 // React
 import React from "react";
 // External Component Screens Imported
-import HomeScreen from "./Screens/HomeScreen";
-import ProductScreen from "./Screens/ProductScreen";
+import Home from "./Pages/Home";
+import ShowProduct from "./Pages/ShowProduct";
 // React-Router
 import { Switch, Route, Link, Redirect, NavLink } from "react-router-dom";
 // App CSS
@@ -26,8 +26,8 @@ function App() {
       <main>
         {/* Routers */}
         <Switch>
-          <Route path="/product/:id" render={(routerProps) => { return <ProductScreen routerProps={routerProps} /> }} />
-          <Route exact path="/" component={HomeScreen} />
+          <Route path="/product/:id" render={(routerProps) => { return <ShowProduct routerProps={routerProps} /> }} />
+          <Route exact path="/" component={Home} />
           {/* End of Router */}
         </Switch>
       </main>
