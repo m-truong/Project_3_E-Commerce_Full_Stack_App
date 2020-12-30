@@ -5,7 +5,7 @@
 // =======================================
 const SECRET = "abcdefghijklmnopqrstuvwxyz";
 // =======================================
-const racquetModel = require ( "../models/Racquet.js")
+const {racquetModel, racquetSchema} = require ("../models/Racquet.js")
 const jwt = require ( "jsonwebtoken")
 const express = require ( "express")
 const racquetController = express.Router();
