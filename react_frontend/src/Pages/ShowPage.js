@@ -8,6 +8,12 @@ import axios from 'axios'
 
 function ShowPage({ routerProps }) {
     const [racquets, setRacquets] = useState([])
+
+    const addToCartHandler = (evt) => {
+        // let tempRacquets = [...racquets]
+        console.log(evt.target.value);
+    }
+    
     // searches array for *condition*
     // need to change this to try and fetch from backend instead ** 
     // lifeCycle Hook
@@ -91,7 +97,7 @@ function ShowPage({ routerProps }) {
                                 productToDisplay.countInStock > 0 ? (
                                     <>
                                         <li>
-                                            <button className="primary block"> Add To Cart</button>
+                                            <button name="id" value={productToDisplay._id}className="primary block" onClick={evt => addToCartHandler(evt)}> Add To Cart</button>
                                         </li>
                                     </>
                                 ) : (
@@ -102,7 +108,6 @@ function ShowPage({ routerProps }) {
                                         </>
                                     )
                             }
-
                         </ul>
                     </div>
                 </div>
