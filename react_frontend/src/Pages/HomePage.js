@@ -7,22 +7,21 @@ import Product from "../Components/Product";
 import Waiting from '../Components/Waiting';
 import Error from '../Components/Error';
 
-function HomeScreen(props) {
+function HomePage(props) {
     // state, stateHandler
-    const [products, setProducts] = useState([]);
-    // ** Extra-Detail ** for slow-loading 
+    const [racquets, setRacquets] = useState([]);
     const [loading, setLoading] = useState(false);
-    // ** Extra-Detail ** for error
     const [error, setError] = useState(false);
+    
     // lifeCycle Hook
     useEffect(() => {
         const fetchData = async () => {
             try {
                 setLoading(true);
-                // Products-array stored inside here! 
-                const { data } = await axios.get("/api/products");
+                // Tennis Racquet Array stored inside here! 
+                const { data } = await axios.get("/api/racquets");
                 setLoading(false);
-                setProducts(data);
+                setRacquets(data);
             } catch (err) {
                 // note: you can set state to diff 'data-type' boolean==>string
                 setError(err.message);
@@ -39,7 +38,7 @@ function HomeScreen(props) {
                 ? (<Waiting />)
                 : error
                     ? (<Error variant="danger">{error}</Error>)
-                    : products.map((product) => {
+                    : racquets.map((product) => {
                         return (
                             <Product key={product._id} product={product} />
                         )
@@ -49,4 +48,4 @@ function HomeScreen(props) {
     )
 }
 
-export default HomeScreen
+export default HomePage

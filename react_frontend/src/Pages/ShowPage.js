@@ -1,38 +1,55 @@
-// React
-import React from 'react'
+// React 
+import React, { useState, useEffect } from 'react'
 // Rating Component
 import Rating from '../Components/Rating'
 // React-Router
 import { Link } from 'react-router-dom'
-// static array of data
-import data from '../data'
+import axios from 'axios'
 
-function ProductScreen({ routerProps }) {
+function ShowPage({ routerProps }) {
+    const [racquets, setRacquets] = useState([])
     // searches array for *condition*
-    const productToDisplay = data.products.find((currProduct) => currProduct._id === routerProps.match.params.id)
+    // need to change this to try and fetch from backend instead ** 
+    // lifeCycle Hook
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                // Tennis Racquet Array stored inside here 
+                const { data } = await axios.get("/api/racquets");
+                setRacquets(data);
+            } catch (err) {
+                console.error(err);
+            } finally {
+                console.log('check browser if racquets were displayed correctly... ');
+            }
+        }
+        fetchData();
+    }, [])
+
+    const productToDisplay = racquets.find((currProduct) => currProduct._id === routerProps.match.params.id)
 
     if (!productToDisplay) {
         return (
             <div>
-                Product Not Currently Available ... 
+                Product Not Currently Available ...
             </div>
         )
     }
 
     return (
         <div>
-            <Link to="/"> Back To Result</Link>
+            <Link to="/"> Back To Index Page of Tennis Racquets </Link>
             {/* 3 custom-columns */}
             <div className="row top">
                 {/* product image */}
                 <div className="col-2">
-                    <img className="large" src={productToDisplay.image} alt={productToDisplay.name} />
+                    <img className="large" src={productToDisplay.image} alt={productToDisplay.model} />
                 </div>
                 {/* description */}
                 <div className="col-1">
                     <ul>
                         <li>
-                            <h1>{productToDisplay.name}</h1>
+                            <h1>{productToDisplay.model}</h1>
                         </li>
                         <li>
                             <Rating
@@ -80,4 +97,4 @@ function ProductScreen({ routerProps }) {
         </div>
     )
 }
-export default ProductScreen
+export default ShowPage

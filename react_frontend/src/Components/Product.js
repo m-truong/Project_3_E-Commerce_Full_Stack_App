@@ -9,13 +9,13 @@ export default function Product({ product }) {
         <div key={product._id} className="card">
             {/* Image */}
             <a href={`/product/${product._id}`}>
-                <img className="medium" src={product.image} alt={product.name} />
+                <img className="medium" src={product.image} alt={product.model} />
             </a>
         {/* Card-Body */}
             <div className="card-body">
                 {/* Product Name  */}
                 <a href={`/product/${product._id}`}>
-                    <h2>{product.name}</h2>
+                    <h2>{product.model}</h2>
                 </a>
                 {/* Rating Component */}
                 <Rating

@@ -16,15 +16,15 @@ body {
 .grid-container {
   display: grid;
   grid-template-areas:
-    "header"
+    "nav"
     "main"
     "footer";
   grid-template-columns: 1fr;
   grid-template-rows: 5rem 1fra 5rem;
   height: 100%;
 }
-header {
-  grid-area: header;
+nav {
+  grid-area: nav;
   background-color: #203040;
 }
 main {
@@ -65,8 +65,8 @@ li {
   margin-top: 1rem; 
 }
 
-/* Header */
-header a {
+/* nav */
+nav a {
   color: #ffffff;
   padding: 1rem;
 }
