@@ -1,5 +1,5 @@
 /**
- * Schema for 'Customer' when a new online customer registers for a new account on storefront page. 
+ * Schema for 'Customer' when a new online customer registers for a new account on Racquet Dash app page. 
  */
 const { racquetModel, racquetSchema } = require("./Racquet.js")
 const { Schema, model } = require('mongoose');

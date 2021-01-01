@@ -1,3 +1,4 @@
+// Racket Logger API database of tennis racquet specifications.
 [
     {
         "brand": "Babolat",

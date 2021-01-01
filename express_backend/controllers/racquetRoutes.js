@@ -1,9 +1,13 @@
 // ===================
 // SET DEV-ENVIRONMENT
 // ===================
-
+if (process.env.NODE_ENV === 'development') {
+    console.log("🎾🎾🎾 does this if statement-block run? 🎾🎾🎾")
+    require('dotenv').config()
+}
 // =======================================
-const SECRET = "abcdefghijklmnopqrstuvwxyz";
+console.log(`${process.env.SECRET} ==> this is printing inside routes-controller`)
+
 // =======================================
 const {racquetModel, racquetSchema} = require ("../models/Racquet.js")
 const jwt = require ( "jsonwebtoken")

@@ -14,9 +14,7 @@ function ShowPage({ routerProps }) {
         console.log(evt.target.value);
     }
     
-    // searches array for *condition*
     // need to change this to try and fetch from backend instead ** 
-    // lifeCycle Hook
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -97,7 +95,7 @@ function ShowPage({ routerProps }) {
                                 productToDisplay.countInStock > 0 ? (
                                     <>
                                         <li>
-                                            <button name="id" value={productToDisplay._id}className="primary block" onClick={evt => addToCartHandler(evt)}> Add To Cart</button>
+                                            <button name="id" value={productToDisplay._id} className="primary block" onClick={evt => addToCartHandler(evt)}> Add To Cart</button>
                                         </li>
                                     </>
                                 ) : (

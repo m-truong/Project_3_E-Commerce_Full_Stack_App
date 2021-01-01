@@ -29,7 +29,6 @@ function HomePage(props) {
             }
         }
         fetchData();
-        // empty dependencies-arr // on initial render 
     }, [])
     return (
         <div className="row center">

@@ -1,5 +1,5 @@
 /**
- * Schema for 'Racquet' for tennis racquet product mongo-database.
+ * Schema for 'Racquet' for tennis racquet product mongo-database with brand, model, Tennis Warehouse image link, description, price $$$ , etc.
  */
 
 const mongoose = require('mongoose');
