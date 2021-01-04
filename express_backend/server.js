@@ -17,13 +17,6 @@ if (process.env.NODE_ENV === 'development') {
     require('dotenv').config()
 }
 
-// ===================
-// SET LOCALHOST-ENVIRONMENT
-// ===================
-// const production  = 'https://racquetdash.herokuapp.com';
-// const development = 'http://localhost:3000/';
-// const url = (process.env.NODE_ENV ? development : production);
-
 // ============
 // DEPENDENCIES
 // ============

@@ -4,6 +4,15 @@ import { RacquetMongoDBContext } from "../Components/Context";
 /**
  * The "LoginPage" makes a "POST" request to the "/login" endpoint located inside of my "server.js" and retrieves a JSON object containing "token"" and "customer" user-object that it uses to set to localStorage and react state.
  * */
+
+// ===================
+// SET DEV/PROD-ENVIRONMENT
+// ===================
+const production  = 'https://racquetdash.herokuapp.com';
+const development = 'http://localhost:3000';
+const url = (process.env.NODE_ENV === 'development' ? development : production);
+console.log(`NODE_ENV is ${process.env.NODE_ENV}, so base_url is connecting to ${url}`)
+
 const LoginPage = () => {
     const { customerLoggedIn, tokenData } = useContext(RacquetMongoDBContext)
     const [currentCustomerLoggedIn, setCustomerLoggedIn] = customerLoggedIn
@@ -18,7 +27,7 @@ const LoginPage = () => {
         })
         evt.currentTarget.reset();
         try {
-            const response = await fetch(`/login`, {
+            const response = await fetch(`${url}/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

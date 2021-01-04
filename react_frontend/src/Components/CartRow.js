@@ -3,6 +3,14 @@ import { RacquetMongoDBContext } from './Context';
 import { Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
+// ===================
+// SET DEV/PROD-ENVIRONMENT
+// ===================
+const production  = 'https://racquetdash.herokuapp.com';
+const development = 'http://localhost:3000';
+const url = (process.env.NODE_ENV === 'development' ? development : production);
+console.log(`NODE_ENV is ${process.env.NODE_ENV}, so base_url is connecting to ${url}`)
+
 // "CartRow" component renders a row of properties for each tennis racquet passed down as props from the "CartList" parent component.
 // The tennis racquet data is destructured and stored into variables "_id", "model", "image", and "price" which are rendered using Bootstrap "Row" and "Col" components.
 function CartRow({ currRacquetData, index}) {
@@ -22,7 +30,7 @@ function CartRow({ currRacquetData, index}) {
             _id, username, password, product_cart
         });
         try {
-            const response = await fetch(`/api/customers/productcart/${_id}`, {
+            const response = await fetch(`${url}/api/customers/productcart/${_id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

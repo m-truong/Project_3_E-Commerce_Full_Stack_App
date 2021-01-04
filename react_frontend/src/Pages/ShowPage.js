@@ -4,6 +4,14 @@ import Rating from '../Components/Rating'
 import { Link } from 'react-router-dom'
 import Loading from '../Components/Loading'
 
+// ===================
+// SET DEV/PROD-ENVIRONMENT
+// ===================
+const production  = 'https://racquetdash.herokuapp.com';
+const development = 'http://localhost:3000';
+const url = (process.env.NODE_ENV === 'development' ? development : production);
+console.log(`NODE_ENV is ${process.env.NODE_ENV}, so base_url is connecting to ${url}`)
+
 function ShowPage({ routerProps }) {
     const { racquetData, customerLoggedIn, tokenData } = useContext(RacquetMongoDBContext);
     const [racquets] = racquetData;
@@ -29,8 +37,8 @@ function ShowPage({ routerProps }) {
             _id, username, password, product_cart
         });
         try {
-            const response = await fetch(`/api/customers/productcart/${_id}`, {
-                method: "PUT",
+            const response = await fetch(`${url}/api/customers/productcart/${_id}`, {
+                method: "PUT", 
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": token

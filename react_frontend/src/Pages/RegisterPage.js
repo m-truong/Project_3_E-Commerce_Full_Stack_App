@@ -2,6 +2,15 @@ import React, { useRef } from "react";
 /**
  * This creates a new "Customer" document object inside the "customers"" collection of my RacquetDashDB sub-database by making a "POST" request to the "/api/customers/register" endpoint.
  */
+
+// ===================
+// SET DEV/PROD-ENVIRONMENT
+// ===================
+const production  = 'https://racquetdash.herokuapp.com';
+const development = 'http://localhost:3000';
+const url = (process.env.NODE_ENV === 'development' ? development : production);
+console.log(`NODE_ENV is ${process.env.NODE_ENV}, so base_url is connecting to ${url}`)
+
 const RegisterPage = (props) => {
     const regNameInput = useRef(null);
     const regPasswordInput = useRef(null);
@@ -13,7 +22,7 @@ const RegisterPage = (props) => {
         })
         evt.currentTarget.reset();
         try {
-            const response = await fetch("/api/customers/register", {
+            const response = await fetch(`${url}/api/customers/register`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
