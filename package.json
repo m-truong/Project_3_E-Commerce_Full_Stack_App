@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node express_backend/server.js",
-    "dev": "NODE_ENV=development nodemon express_backend/server.js"
+    "dev": "NODE_ENV=development nodemon express_backend/server.js",
+    "heroku-postbuild": "cd react_frontend && npm install && npm run build"
   },
   "repository": { 
     "type": "git",

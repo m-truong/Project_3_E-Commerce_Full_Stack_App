@@ -27,7 +27,7 @@ const bcryptjs = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const Customer = require("./models/Customer.js");
 const racquetController = require("./controllers/racquetRoutes.js")
-const customerController = require('./controllers/customerRoutes.js')
+const customerController = require("./controllers/customerRoutes.js")
 const app = express()
 
 // =============
