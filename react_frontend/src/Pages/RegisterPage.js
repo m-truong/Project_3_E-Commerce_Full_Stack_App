@@ -1,14 +1,10 @@
 import React, { useRef } from "react";
-import { Link, Redirect } from "react-router-dom"
 /**
- * Registers new Customer by making a fetch-request to the '/register' route handler located inside of 'server.js' in 
- * 'bookmark_express_api' directory, and creates new Customer 'document-object' inside the 'Customers' collection.
+ * This creates a new "Customer" document object inside the "customers"" collection of my RacquetDashDB sub-database by making a "POST" request to the "/api/customers/register" endpoint.
  */
 const RegisterPage = (props) => {
     const regNameInput = useRef(null);
     const regPasswordInput = useRef(null);
-
-    //register 
     const registerHandler = async (evt) => {
         evt.preventDefault();
         const body = JSON.stringify({
@@ -17,7 +13,7 @@ const RegisterPage = (props) => {
         })
         evt.currentTarget.reset();
         try {
-            const response = await fetch("/register", {
+            const response = await fetch("/api/customers/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -29,23 +25,23 @@ const RegisterPage = (props) => {
             console.error(err);
         } finally {
             console.log("check MongoDB Atlas if new Customer username was created...");
+            // This redirects the user to the "LoginPage" after a new customer has succesffuly created an account.
+            window.location.href = "/login";
         }
     }
     return (
         <>
-        <div className="form-container">
-            <h2>Register New Customer Form</h2>
-            <form onSubmit={registerHandler}>
-                <label> New Username:
+            <div className="x-form-container">
+                <h2>Register New Customer Form</h2>
+                <form onSubmit={registerHandler}>
+                    <label> New Username:
             <input type="text" ref={regNameInput} placeholder="New username login" />
-                </label>
-                <label> New Password:
+                    </label>
+                    <label> New Password:
             <input type="password" ref={regPasswordInput} placeholder="New password login" />
-                </label>
-                {/* <Link to="/"> */}
+                    </label>
                     <button type="submit">Submit!</button>
-                {/* </Link> */}
-            </form>
+                </form>
             </div>
         </>
     )

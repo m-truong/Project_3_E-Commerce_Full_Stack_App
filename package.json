@@ -5,10 +5,10 @@
   "main": "express_backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch express_backend --exec node express_backend/server.js",
-    "dev": "NODE_ENV=development nodemon --watch express_backend --exec node express_backend/server.js"
+    "start": "node express_backend/server.js",
+    "dev": "NODE_ENV=development nodemon express_backend/server.js"
   },
-  "repository": {
+  "repository": { 
     "type": "git",
     "url": "git+https://github.com/m-truong/Project_3_E-Commerce_Full_Stack_App.git"
   },
@@ -16,7 +16,7 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "14.15.1"
+    "node": "14.15.1" 
   },
   "bugs": {
     "url": "https://github.com/m-truong/Project_3_E-Commerce_Full_Stack_App/issues"

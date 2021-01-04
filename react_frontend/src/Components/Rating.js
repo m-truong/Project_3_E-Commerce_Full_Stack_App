@@ -2,8 +2,9 @@ import React from 'react'
  
 function Rating({ rating, numReviews }) {
     return ( 
-        <div className="rating">
-            {/* Favicon Stars */}
+        <div className="x-rating">
+            {/* FontAwesome Stars */}
+            {/* Each FontAwesome Star conditionally renders a "full-star", "half-star", or no star, based on the tennis racquet model's rating field-property between 0-5. */}
             <span>
                 <i className={
                     rating >= 1

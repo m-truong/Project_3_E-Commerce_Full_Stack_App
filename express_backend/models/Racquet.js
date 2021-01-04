@@ -1,9 +1,10 @@
 /**
- * Schema for 'Racquet' for tennis racquet product mongo-database with brand, model, Tennis Warehouse image link, description, price $$$ , etc.
+ * "Racquet-model" used to create every "racquet-document-object" inside "RacquetDashDB" database.
  */
 
 const mongoose = require('mongoose');
 
+// Every "racquet-document-object" has this schema containing fields on racquet brand, model, Tennis Warehouse image link, description, and price. Properties such as stiffness, head_size, and string tension were created using the Racket Logger API database. 
 const racquetSchema = new mongoose.Schema({
     brand: String,
     model: String, 

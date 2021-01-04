@@ -1,29 +1,29 @@
-// React
 import React from 'react'
-// Rating Component 
+import { Link } from 'react-router-dom'
 import Rating from './Rating'
 
 export default function Product({ product }) {
     return (
         // Card 
-        <div key={product._id} className="card">
+        <div key={product._id} className="x-card">
             {/* Image */}
-            <a href={`/product/${product._id}`}>
-                <img className="medium" src={product.image} alt={product.model} />
-            </a>
-        {/* Card-Body */}
-            <div className="card-body">
-                {/* Product Name  */}
-                <a href={`/product/${product._id}`}>
-                    <h2>{product.model}</h2>
-                </a>
+            {/* Tennis Racquet image is a link that renders the "ShowPage" using the "product._id" as the query-parameter. */}
+            <Link to={`/product/${product._id}`}>
+                <img className="x-medium" src={product.image} alt={product.model} />
+            </Link>
+            {/* Card-Body */}
+            <div className="x-card-body">
+                {/* Product Name is also a link that renders the "ShowPage". */}
+                <Link to={`/product/${product._id}`}>
+                    <h2 className="x-card-link">{product.model}</h2>
+                </Link>
                 {/* Rating Component */}
                 <Rating
                     rating={product.rating}
                     numReviews={product.numReviews}
                 />
                 {/* Product Price */}
-                <div className="price">${product.price}</div>
+                <div className="x-price">${product.price}</div>
             </div>
         </div>
     )

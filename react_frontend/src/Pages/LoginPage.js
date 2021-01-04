@@ -1,10 +1,12 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
+import { RacquetMongoDBContext } from "../Components/Context";
 /**
- * Logins user by making a fetch-request to the '/login' route handler located inside of 'server.js' in 'bookmark_express_api' 
- * directory, and passes back JSON object containing 'token, username' and authenticated' properties. Sets window.localStorage in 
- * browser so username stays logged in.
- */
-const LoginPage = ({ setToken }) => {
+ * The "LoginPage" makes a "POST" request to the "/login" endpoint located inside of my "server.js" and retrieves a JSON object containing "token"" and "customer" user-object that it uses to set to localStorage and react state.
+ * */
+const LoginPage = () => {
+    const { customerLoggedIn, tokenData } = useContext(RacquetMongoDBContext)
+    const [currentCustomerLoggedIn, setCustomerLoggedIn] = customerLoggedIn
+    const [token, setToken] = tokenData
     const usernameInput = useRef(null);
     const passwordInput = useRef(null);
     const loginHandler = async (evt) => {
@@ -22,8 +24,11 @@ const LoginPage = ({ setToken }) => {
                 },
                 body
             })
-            const data = await response.json();
+            const data = await response.json()
+            // This sets the "token" and "currentCustomerLoggedIn" inside localStorage and sets the state variables as well.
             window.localStorage.setItem('token', `Bearer ${data.token}`)
+            window.localStorage.setItem('currentCustomerLoggedIn', data.user)
+            setCustomerLoggedIn(data.user)
             setToken(`Bearer ${data.token}`)
         } catch (err) {
             console.error(err);
@@ -33,7 +38,7 @@ const LoginPage = ({ setToken }) => {
     }
     return (
         <>
-            <div className="form-container">
+            <div className="x-form-container">
                 <h2>Login Existing Customer Form</h2>
                 <form onSubmit={loginHandler}>
                     <label> Username:
@@ -48,5 +53,4 @@ const LoginPage = ({ setToken }) => {
         </>
     )
 }
-
 export default LoginPage;
