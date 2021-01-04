@@ -1,3 +1,6 @@
+const express = require("express")
+const app = express()
+
 // ===================
 // SET BUILD-ENVIRONMENT
 // ===================
@@ -20,7 +23,6 @@ if (process.env.NODE_ENV === 'development') {
 const PORT = process.env.PORT || 3000
 const SECRET = process.env.SECRET
 const MONGODB_URI = process.env.MONGODB_URI
-const express = require("express")
 const mongoose = require("mongoose")
 const cors = require("cors")
 const bcryptjs = require("bcryptjs")
@@ -28,7 +30,6 @@ const jwt = require("jsonwebtoken")
 const Customer = require("./models/Customer.js");
 const racquetController = require("./controllers/racquetRoutes.js")
 const customerController = require("./controllers/customerRoutes.js")
-const app = express()
 
 // =============
 // MONGODB-ATLAS
