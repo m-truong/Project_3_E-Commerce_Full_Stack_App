@@ -1,5 +1,6 @@
 import React, { useContext, useRef } from "react";
 import { RacquetMongoDBContext } from "../Components/Context";
+
 /**
  * The "LoginPage" makes a "POST" request to the "/login" endpoint located inside of my "server.js" and retrieves a JSON object containing "token"" and "customer" user-object that it uses to set to localStorage and react state.
  * */
@@ -17,7 +18,7 @@ const LoginPage = () => {
         })
         evt.currentTarget.reset();
         try {
-            const response = await fetch("/login", {
+            const response = await fetch(`/login`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -5,9 +5,9 @@ const app = express()
 // SET BUILD-ENVIRONMENT
 // ===================
 if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
-    app.use(express.static('react_frontend/build'));
+    app.use(express.static('../build'));
     app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname + '/react_frontend/build/index.html'));
+        res.sendFile(path.join(__dirname + '../build/index.html'));
     });
 }
 // ===================
@@ -16,6 +16,13 @@ if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging')
 if (process.env.NODE_ENV === 'development') {
     require('dotenv').config()
 }
+
+// ===================
+// SET LOCALHOST-ENVIRONMENT
+// ===================
+// const production  = 'https://racquetdash.herokuapp.com';
+// const development = 'http://localhost:3000/';
+// const url = (process.env.NODE_ENV ? development : production);
 
 // ============
 // DEPENDENCIES

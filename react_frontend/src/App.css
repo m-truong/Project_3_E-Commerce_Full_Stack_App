@@ -82,7 +82,6 @@ a.x-brand:hover {
 ul {
   padding: 0.5rem;
   margin: 0;
-  /* gets rid of bullet points */
   list-style-type: none;
 }
 li {
@@ -131,7 +130,7 @@ nav div a.x-nav-link {
   justify-content: center;
 }
 .x-row.x-top {
-  /* pushes product "divs" to top of product-show-page  */
+  /* pushes product "divs" to top of show-page  */
   align-items: flex-start;
 }
 
@@ -170,7 +169,6 @@ img.x-medium {
 }
 
 img.x-large {
-  /* 100% of parent container */
   max-width: 50rem;
   width: 100%;
   border-radius: 1.5rem; 
@@ -222,7 +220,7 @@ li.error-text {
   color: #f0c040;
   margin: 01rem;
 }
-/* targets last span-el number of reviews */
+
 .x-rating span:last-child {
   color: #404040;
 }
@@ -260,7 +258,6 @@ button:hover{
   font-size: 1.7rem;
   font-weight: bold;
   margin-left: 1.8rem;
-  /* padding: 2rem; */
 }
 
 /* In or Out-of-Stock Font-Colors */
@@ -281,11 +278,13 @@ button:hover{
 .x-alert-info {
   color: #2020a0;
   background-color: #e0e0ff;
+  border: 2px solid navy;
 }
 
 .x-alert-danger {
   color: #a02020;
   background-color: #ffe0e0e0;
+  border: 2px solid crimson;
 }
 div.x-contact-details {
   width: 50vw;
@@ -332,19 +331,17 @@ div#about-container .about-btn {
   padding: 20px;
 }
 
-/* Style inputs with type="text", select elements and textareas */
 input[type=text], input[type=password], select, textarea {
   width: 100%; 
   padding: 12px; 
   border: 1px solid #ccc; 
   border-radius: 4px; 
-  box-sizing: border-box; /* Ensures that padding and width stays in place */
+  box-sizing: border-box; 
   margin-top: 6px; 
   margin-bottom: 16px; 
   resize: vertical 
 }
 
-/* Style the submit button with a specific background color etc */
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
@@ -354,7 +351,6 @@ input[type=submit] {
   cursor: pointer;
 }
 
-/* When moving the mouse over the submit button, add a darker green color */
 input[type=submit]:hover {
   background-color: #45a049;
 }

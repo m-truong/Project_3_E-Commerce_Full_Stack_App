@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+
+// const baseUrl = 'http://localhost:3007/api/racquets'
+
 /**
  * I import <Route>, <Link>, and <Switch> react-router components here.
  * I use them inside my App.js file to render different react components when the customer clicks on different nav links.
@@ -50,7 +53,7 @@ function App() {
   const fetchData = async () => {
     try {
       setLoading(true)
-      const { data } = await axios.get("/api/racquets")
+      const { data } = await axios.get(`http://localhost:3000/api/racquets`)
       setLoading(false)
       setRacquets(data)
     } catch (err) {
@@ -79,7 +82,7 @@ function App() {
       { loading
         ? (<Loading />)
         : error
-          ? (<Error variant="x-danger">{error}</Error>)
+          ? (<Error variant="danger">{error}</Error>)
           /**
            * "RacquetMongoDBContext.Provider" passes down "racquet" state, "currentCustomerLoggedIn" state, and "token" state to all child react components.
            *  */
