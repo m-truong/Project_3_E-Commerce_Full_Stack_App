@@ -140,7 +140,7 @@ function App() {
                   <Route path="/about" component={AboutPage} />
                   <Route path="/contact" component={ContactPage} />
                   <Route path="/register" component={RegisterPage} />
-                  <Route path="/login" component={LoginPage} />
+                  <Route path="/login" component={LoginPage}/>
                   <Route path="/cart" component={CartPage} />
                   {/* "ShowPage" uses "routerProps" to render correct tennis racquet model to display using the "_id" from "routerProps.match.params.id" */}
                   <Route path="/product/:id" render={(routerProps) => { return <ShowPage routerProps={routerProps} /> }} />

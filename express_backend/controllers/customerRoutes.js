@@ -58,15 +58,27 @@ customerController.put('/productcart/:id', auth, async (req, res) => {
 // ===============================================
 // CREATE: create a NEW resource 
 // ===============================================
-customerController.post('/register', (req, res) => {
-    req.body.password = bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync(10));
-    Customer.create(req.body, (err, newCustomer) => {
-        if (!err) {
-            res.status(200).json(newCustomer)
-        } else {
-            res.status(400).json(err)
+customerController.post('/register', async (req, res) => {
+    try {
+        const { username } = req.body;
+        const user = await Customer.findOne({ username })
+        // This prevents a new "customer" from registering with an existing "username" found in the "customers" collection.
+        if (!user) {
+            req.body.password = bcryptjs.hashSync(req.body.password, bcryptjs.genSaltSync(10));
+            Customer.create(req.body, (err, newCustomer) => {
+                if (!err) {
+                    res.status(200).json(newCustomer)
+                } else {
+                    res.status(400).json(err)
+                }
+            })
         }
-    })
+    } catch (err) {
+        console.error(err)
+        res.status(400).json(err)
+    } finally {
+        console.log("check MongoDB Atlass to verifiy if new \"Customer\" created...")
+    }
 })
 
 module.exports = customerController; 

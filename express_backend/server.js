@@ -60,7 +60,7 @@ app.post('/login', async (req, res) => {
     const { username, password } = req.body;
     try {
         const user = await Customer.findOne({ username })
-        // ** This prevents the "login-route" from passing back a "null" value when a "username" is not found inside my "customers". 
+        // ** This prevents the "login-route" from passing back a "null" value when a "username" is not found inside my "customers".
         if (user === null) {
             return;
         }
