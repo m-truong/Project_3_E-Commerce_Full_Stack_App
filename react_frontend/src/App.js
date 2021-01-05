@@ -10,6 +10,7 @@ import axios from "axios";
  * component, or the "About Us" link to render the <AboutPage> component without having to refresh the page. 
  */
 import { Route, Link, Switch } from "react-router-dom";
+
 /** 
  * "RacquetMongoDBContext" will be used to pass down react-state containing "racquets"-array fetched from RacquetDashDB. 
  * I also pass down the "currentCustomerLoggedIn" object and "token" using context to components deeper in my react app component-tree.
@@ -41,7 +42,7 @@ import './App.css';
 // ===================
 // SET DEV/PROD-ENVIRONMENT
 // ===================
-const production  = 'https://racquetdash.herokuapp.com';
+const production = 'https://racquetdash.herokuapp.com';
 const development = 'http://localhost:3000';
 const url = (process.env.NODE_ENV === 'development' ? development : production);
 console.log(`NODE_ENV is ${process.env.NODE_ENV}, so base_url is connecting to ${url}`)

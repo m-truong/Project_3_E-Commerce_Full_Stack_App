@@ -5,6 +5,7 @@ html {
   font-size: 62.5%; 
   box-sizing: border-box;
 }
+
 body {
   background-color: whitesmoke;
   margin: 0;
@@ -31,6 +32,7 @@ nav {
   grid-area: nav;
   background-color: #203040;
 }
+
 main {
   grid-area: main;
   padding: 1rem;
@@ -292,7 +294,7 @@ div.x-contact-details {
   margin: 0 auto;
 }
 div#about-container {
-  width: 855px;
+  width: 50vw;
   margin: 0 auto;
   margin-top: 10rem;
   line-height: 3rem;
@@ -301,6 +303,7 @@ div#about-container {
 div#about-container .about-heading {
   font-size: 1.7rem;
   font-weight: bold;
+
 } 
 div#about-container p.about-para {
   padding: 1rem 0;
