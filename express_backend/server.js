@@ -1,15 +1,7 @@
 const express = require("express")
 const app = express()
+const path = require("path")
 
-// ===================
-// SET BUILD-ENVIRONMENT
-// ===================
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
-    app.use(express.static('../build'));
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname + '../build/index.html'));
-    });
-}
 // ===================
 // SET DEV-ENVIRONMENT
 // ===================
@@ -44,7 +36,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true 
 // ===============
 // MIDDLEWARE 
 // ===============
-app.use(express.static("public"));
+// app.use(express.static("public"));
 app.use(cors())
 // app.use(cors(corsOptions))
 app.use(express.json());
@@ -82,6 +74,16 @@ app.post('/login', async (req, res) => {
         res.status(400).json(err)
     }
 })
+
+// ===================
+// SET BUILD-ENVIRONMENT
+// ===================
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname + 'build/index.html'));
+    });
+}
 
 // ============
 // OPEN PORT
