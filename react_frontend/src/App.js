@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// const baseUrl = 'http://localhost:3007/api/racquets'
-
 /**
  * I import <Route>, <Link>, and <Switch> react-router components here.
  * I use them inside my App.js file to render different react components when the customer clicks on different nav links.
@@ -30,14 +28,6 @@ import Loading from "./Components/Loading.js";
 
 // Custom App-CSS Stylesheet
 import './App.css';
-
-// ===================
-// SET DEV-ENVIRONMENT
-// ===================
-// if (process.env.NODE_ENV === 'development') {
-//   require('dotenv').config({path: `.env.${process.env.NODE_ENV}`})
-// }
-// const path = require('path'); require('dotenv').config({ path: path.join(__dirname, ../.env.${process.env.NODE_ENV})}); 
 
 // ===================
 // SET DEV/PROD-ENVIRONMENT
