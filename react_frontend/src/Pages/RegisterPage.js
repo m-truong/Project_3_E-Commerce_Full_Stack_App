@@ -36,7 +36,7 @@ const RegisterPage = (props) => {
         } finally {
             console.log("check MongoDB Atlas if new Customer username was created...");
             // This redirects the user to the "LoginPage" after a new customer has succesffuly created an account.
-            window.location.href = `${url}/login`;
+            // window.location.href = `${url}/login`;
         }
     }
     return (
