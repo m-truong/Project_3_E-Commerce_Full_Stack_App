@@ -22,6 +22,7 @@
     "url": "https://github.com/m-truong/Project_3_E-Commerce_Full_Stack_App/issues"
   },
   "homepage": "https://github.com/m-truong/Project_3_E-Commerce_Full_Stack_App#readme",
+  "build_location": "root/build", 
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",

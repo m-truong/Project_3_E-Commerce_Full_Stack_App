@@ -11,8 +11,8 @@ import { RacquetMongoDBContext } from "../Components/Context";
 // ===================
 const production = 'https://racquetdash.herokuapp.com';
 const development = 'http://localhost:3000';
-const url = (process.env.NODE_ENV === 'development' ? development : production);
-console.log(`NODE_ENV is ${process.env.NODE_ENV}, so base_url is connecting to ${url}`)
+const url = (process.env.REACT_APP_ENV === 'development' ? development : production);
+console.log(`APP_ENV is ${process.env.REACT_APP_ENV}, so base_url is connecting to ${url}`)
 
 const LoginPage = () => {
     const { customerLoggedIn, tokenData } = useContext(RacquetMongoDBContext)
