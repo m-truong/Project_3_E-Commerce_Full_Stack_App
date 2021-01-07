@@ -10,7 +10,7 @@ import Loading from '../Components/Loading'
 const production = 'https://racquetdash.herokuapp.com';
 const development = 'http://localhost:3000';
 const url = (process.env.REACT_APP_ENV === 'development' ? development : production);
-console.log(`APP_ENV is ${process.env.REACT_APP_ENV}, so base_url is connecting to ${url}`)
+// console.log(`APP_ENV is ${process.env.REACT_APP_ENV}, so base_url is connecting to ${url}`)
 
 function ShowPage({ routerProps }) {
     const { racquetData, customerLoggedIn, tokenData } = useContext(RacquetMongoDBContext);

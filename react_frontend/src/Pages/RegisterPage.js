@@ -10,7 +10,7 @@ import React, { useRef } from "react";
 const production = 'https://racquetdash.herokuapp.com';
 const development = 'http://localhost:3000';
 const url = (process.env.REACT_APP_ENV === 'development' ? development : production);
-console.log(`APP_ENV is ${process.env.REACT_APP_ENV}, so base_url is connecting to ${url}`)
+// console.log(`APP_ENV is ${process.env.REACT_APP_ENV}, so base_url is connecting to ${url}`)
 
 const RegisterPage = (props) => {
     const regNameInput = useRef(null);
@@ -34,7 +34,7 @@ const RegisterPage = (props) => {
         } catch (err) {
             console.error(err);
         } finally {
-            console.log("check MongoDB Atlas if new Customer username was created...");
+            // console.log("check MongoDB Atlas if new Customer username was created...");
             // This redirects the user to the "LoginPage" after a new customer has succesffuly created an account.
             alert("Successfully created new username, please login.")
             // window.location.href = `${url}/login`;

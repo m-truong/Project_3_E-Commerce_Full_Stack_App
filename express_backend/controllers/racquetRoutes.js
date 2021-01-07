@@ -46,7 +46,7 @@ racquetController.route("/")
         } catch (error) {
             res.status(400).json(error);
         } finally {
-            console.log('check Postman to verify if it displayed all tennis racquet document-objects fetched correctly...');
+            // console.log('check Postman to verify if it displayed all tennis racquet document-objects fetched correctly...');
         }
     })
     .post(async (req, res) => {
@@ -59,7 +59,7 @@ racquetController.route("/")
         } catch (error) {
             res.status(400).json(error);
         } finally {
-            console.log('check Postman to verify if new tennis racquet document-object was successfully created...');
+            // console.log('check Postman to verify if new tennis racquet document-object was successfully created...');
         }
     });
 

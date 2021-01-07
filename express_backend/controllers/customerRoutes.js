@@ -47,7 +47,7 @@ customerController.get('/', async (req, res) => {
     } catch (error) {
         res.status(400).json(error);
     } finally {
-        console.log('check Postman to verify if it displayed all "customer"" document-objects correctly...');
+        // console.log('check Postman to verify if it displayed all "customer"" document-objects correctly...');
     }
 })
 
@@ -65,7 +65,7 @@ customerController.put('/productcart/:id', auth, async (req, res) => {
     } catch (error) {
         res.status(400).json(error);
     } finally {
-        console.log('check Postman to verify if "Customer" array of racquetSchema objects updated correctly correctly... ');
+        // console.log('check Postman to verify if "Customer" array of racquetSchema objects updated correctly correctly... ');
     }
 });
 
@@ -91,7 +91,7 @@ customerController.post('/register', async (req, res) => {
         console.error(err)
         res.status(400).json(err)
     } finally {
-        console.log("check MongoDB Atlass to verifiy if new \"Customer\" created...")
+        // console.log("check MongoDB Atlass to verifiy if new \"Customer\" created...")
     }
 })
 
