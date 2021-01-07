@@ -37,6 +37,20 @@ const auth = async (req, res, next) => {
 // ===================================================
 // AUTHENTICATION AND REGISTRATION ROUTES FOR CUSTOMER
 // ===================================================
+customerController.get('/', async (req, res) => {
+    // ======================================
+    // INDEX: display a list of all resources
+    // ======================================
+    try {
+        const foundCustomers = await Customer.find({});
+        res.status(200).json(foundCustomers);
+    } catch (error) {
+        res.status(400).json(error);
+    } finally {
+        console.log('check Postman to verify if it displayed all "customer"" document-objects correctly...');
+    }
+})
+
 // ===========================================
 // UPDATE: update a resource
 // ===========================================

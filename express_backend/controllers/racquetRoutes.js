@@ -35,7 +35,7 @@ const auth = async (req, res, next) => {
 // ==============================================
 // RESTFUL-ROUTES 
 // ==============================================
-racquetController.route("/")
+racquetController.route("/") 
     .get(async (req, res) => {
         // ======================================
         // INDEX: display a list of all resources
