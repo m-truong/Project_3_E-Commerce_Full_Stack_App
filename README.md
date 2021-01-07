@@ -90,12 +90,6 @@ function ShowPage({ routerProps }) {
 
 ## Lessons/Ongoing Issues:
 
-### Writing cleaner code
-
-- I want to improve my code quality in future projects by  planning them out better. 
-- I always write my code and then hope I can refactor it after I'm done, but I always end up running out of time before I can accomplish that.
-- Next time, I'll try to actively refactor my project's code as I build it. 
-
 ### Understanding window.localStorage browser API 
 
 - I wanted to better understand how to implement the window.localStorage browser API. 
